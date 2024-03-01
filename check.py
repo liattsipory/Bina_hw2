@@ -43,6 +43,7 @@ class PirateStochasticProblem:
         self.state = deepcopy(an_input)
         self.graph = self.build_graph()
         start = time.perf_counter()
+        # OUR FUNCTION
         self.agent = initiate_agent(deepcopy(self.state))
         end = time.perf_counter()
         if end - start > INIT_TIME_LIMIT:
@@ -59,7 +60,9 @@ class PirateStochasticProblem:
             self.terminate_execution()
         while self.state["turns to go"]:
             start = time.perf_counter()
+            # OUR FUNCTION
             action = self.agent.act(deepcopy(self.state))
+            #print(action)
             end = time.perf_counter()
             if end - start > TURN_TIME_LIMIT:
                 logging.critical(f"timed out on an action")
@@ -69,6 +72,7 @@ class PirateStochasticProblem:
                 print(action)
                 raise RuntimeError
             self.result(action)
+            #print(self.score)
         self.terminate_execution()
 
     def is_action_legal(self, action):
@@ -139,6 +143,7 @@ class PirateStochasticProblem:
                     logging.error(f"Drop action {atomic_action} is illegal!")
                     return False
 
+            # wait is the only left choice
             elif atomic_action[0] != 'wait':
                 return False
         # check mutex action
@@ -181,6 +186,7 @@ class PirateStochasticProblem:
             self.state['pirate_ships'][ship_name]['capacity'] -= 1
             return
         elif atomic_action[0] == 'deposit':
+            # number of treasures * price per treasure
             self.score += (2 - self.state['pirate_ships'][ship_name]
                            ['capacity']) * DROP_IN_DESTINATION_REWARD
             self.state['pirate_ships'][ship_name]['capacity'] = 2

@@ -20,7 +20,7 @@ additional_inputs = [
                                       "path": [(2, 3), (2, 3)]}},
     },
     {
-        "optimal": True,
+        "optimal": False,
         "infinite": False,
         "map": [['S', 'S', 'I', 'S'],
                 ['S', 'S', 'I', 'S'],

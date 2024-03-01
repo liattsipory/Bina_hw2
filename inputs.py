@@ -1,8 +1,7 @@
 small_inputs = [
     {
-        "optimal": True,
-        "infinite": True,
-        "gamma": 0.9,
+        "optimal": False,
+        "infinite": False,
         "map": [
             ['S', 'S', 'I', 'S'],
             ['S', 'S', 'I', 'S'],
@@ -18,9 +17,10 @@ small_inputs = [
                       },
         "marine_ships": {'marine_1': {"index": 0,
                                       "path": [(1, 1)]}},
+        "turns to go": 100
     },
     {
-        "optimal": True,
+        "optimal": False,
         "infinite": False,
         "map": [
             ['B', 'S', 'S', 'S', 'I'],
