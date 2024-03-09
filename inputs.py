@@ -1,6 +1,6 @@
 small_inputs = [
     {
-        "optimal": False,
+        "optimal": True,
         "infinite": False,
         "map": [
             ['S', 'S', 'I', 'S'],
@@ -20,7 +20,7 @@ small_inputs = [
         "turns to go": 100
     },
     {
-        "optimal": False,
+        "optimal": True,
         "infinite": False,
         "map": [
             ['B', 'S', 'S', 'S', 'I'],

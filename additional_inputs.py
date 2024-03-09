@@ -2,7 +2,7 @@ additional_inputs = [
     # an infinite game with 5 X 5 map and one pirate ship, 1 treasure and one marine ship
     {
         "optimal": True,
-        "infinite": True,
+        "infinite": False,
         "gamma": 0.9,
         "map": [['B', 'S', 'S', 'S', 'I'],
                 ['I', 'S', 'I', 'S', 'I'],
@@ -20,7 +20,7 @@ additional_inputs = [
                                       "path": [(2, 3), (2, 3)]}},
     },
     {
-        "optimal": False,
+        "optimal": True,
         "infinite": False,
         "map": [['S', 'S', 'I', 'S'],
                 ['S', 'S', 'I', 'S'],

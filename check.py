@@ -282,12 +282,12 @@ def main():
             my_problem.run_round()
         except EndOfGame:
             continue
-    for an_input in additional_inputs:
+    """for an_input in [additional_inputs[1]]:
         try:
             my_problem = PirateStochasticProblem(an_input)
             my_problem.run_round()
         except EndOfGame:
-            continue
+            continue """
 
 
 if __name__ == '__main__':
