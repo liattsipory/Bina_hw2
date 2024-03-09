@@ -46,6 +46,7 @@ class PirateStochasticProblem:
         # OUR FUNCTION
         self.agent = initiate_agent(deepcopy(self.state))
         end = time.perf_counter()
+        print('time for init = ', end - start)
         if end - start > INIT_TIME_LIMIT:
             logging.critical("timed out on constructor")
             raise TimeoutError
@@ -275,6 +276,7 @@ def main():
     main function
     """
     print(f"IDS: {ids}")
+
     for an_input in small_inputs:
         try:
             print(an_input)
@@ -282,12 +284,13 @@ def main():
             my_problem.run_round()
         except EndOfGame:
             continue
-    """for an_input in [additional_inputs[1]]:
+
+    for an_input in additional_inputs:
         try:
             my_problem = PirateStochasticProblem(an_input)
             my_problem.run_round()
         except EndOfGame:
-            continue """
+            continue
 
 
 if __name__ == '__main__':
